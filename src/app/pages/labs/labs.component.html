@@ -1,0 +1,44 @@
+
+<div class="container">
+
+  <h1>Primer proyecto</h1>
+  <h2>{{welcome}}</h2>
+  <ul>
+    <li *ngFor="let task of tasks()">
+      {{task}}
+    </li>
+  </ul>
+  <hr />
+  <h1>{{titulo()}}</h1>
+  <h2>{{ 'Hola'.repeat(4)}}</h2>
+  <p>La suma de 3 + 3 es {{ 3 + 3}}</p>
+  <P>Hola soy {{person.name}} y mi edad es {{person.age}}</P>
+  <img [src]="person.avatar" width="200">
+  <div>
+      <button (click)="handler()">Clickme</button>
+  </div>
+  <div>
+    <button (dblclick)="handler()">DobleClick</button>
+  </div>
+  <div>
+    <input type="number" [value]="person.age" (change)="changeHandler($event)">
+  </div>
+  <div>
+    <input type="text" [value]="person.name" (keydown)="keydownHandler($event)">
+  </div>
+  <div>
+    <input type="text" [value]="person.name" (keydown.shift.t)="clickHandler()">
+  </div>
+  <hr/>
+  <p>Total {{ tasks().length }}</p>
+  <ul>
+    <li *ngFor="let task of tasks(); index as i">
+      Indice {{i}} {{task}}
+    </li>
+  </ul>
+  <h1>Signals</h1>
+  <input type="text" [value]="name()" (change)="changeHandler($event)"/>
+  <p>{{ name() }}</p>
+
+</div>
+
